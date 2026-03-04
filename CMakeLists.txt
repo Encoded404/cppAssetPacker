@@ -1,8 +1,9 @@
 cmake_minimum_required(VERSION 3.15)
 
-set(PROJECT_NAME "cmake-app-template")
-set(LIBRARY_TARGET "cmake-app-internal-lib")
-set(APP_TARGET "cmake-app")
+set(PROJECT_NAME "AssetPacker")
+set(GLTF_LOADER_TARGET "GLTFFileLoader")
+set(GLOB_SELECTOR_TARGET "GlobFileSelector")
+set(APP_TARGET "AssetPackerApp")
 
 # if this is not set by the user cmake will decide
 set(OUTPUT_PATH "${CMAKE_BINARY_DIR}/bin")
@@ -42,6 +43,9 @@ if(CLANG_TIDY_ENABLED)
 	# Enable Clang-Tidy if available
 	include(ConfigureClangTidy)
 endif()
+
+find_package(CLI11 CONFIG REQUIRED)
+find_package(fastgltf CONFIG REQUIRED)
 
 # Add subdirectories for source and tests
 add_subdirectory(src)

@@ -5,7 +5,7 @@ add_executable(example_tests example_tests.cpp)
 find_package(GTest CONFIG REQUIRED)
 include(GoogleTest)
 target_link_libraries(example_tests PRIVATE
-    ${LIBRARY_TARGET}
+    ${GLTF_LOADER_TARGET}
     GTest::gtest
     GTest::gtest_main
 )

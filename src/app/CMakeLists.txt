@@ -4,7 +4,10 @@ target_sources(${APP_TARGET} PRIVATE
     main.cpp
 )
 
-target_link_libraries(${APP_TARGET} PRIVATE ${LIBRARY_TARGET})
+target_link_libraries(${APP_TARGET} PRIVATE ${GLTF_LOADER_TARGET})
+target_link_libraries(${APP_TARGET} PRIVATE ${GLOB_SELECTOR_TARGET})
+target_link_libraries(${APP_TARGET} PRIVATE CLI11::CLI11)
+target_link_libraries(${APP_TARGET} PRIVATE logiface)
 
 # Optionally set executable output name; keep simple default
 set_target_properties(${APP_TARGET} PROPERTIES OUTPUT_NAME ${APP_TARGET})

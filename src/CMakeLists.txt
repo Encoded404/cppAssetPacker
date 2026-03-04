@@ -1,5 +1,8 @@
-# app library
-add_subdirectory(lib1)
+# core GLTF loader library
+add_subdirectory(gltf_loader)
 
-# Executable that links the static library
+# glob selector helper library
+add_subdirectory(glob_selector)
+
+# Executable that links the static libraries
 add_subdirectory(app)

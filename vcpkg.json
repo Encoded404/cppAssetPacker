@@ -5,6 +5,8 @@
     "version": "1.0.0",
     "license": "MIT",
     "dependencies": [
+        "cli11",
+        "fastgltf",
         {
             "name": "gtest",
             "version>=": "1.13.0"

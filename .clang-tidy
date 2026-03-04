@@ -19,13 +19,13 @@ Checks: >-
 
   -bugprone-easily-swappable-parameters,
 
-  -performance-enum-size
+  -performance-enum-size,
+
 #  -misc-non-private-member-variables-in-classes,
 #  -modernize-avoid-c-arrays,
 
 WarningsAsErrors: ''
 
-HeaderFilterRegex: '.*'
 
 CheckOptions:
   - key:    readability-identifier-naming.VariableCase
