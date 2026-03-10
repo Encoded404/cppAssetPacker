@@ -229,8 +229,8 @@ int main(int argc, char** argv) {
     app.add_option("files", files, "Input files")
     ->check(CLI::ExistingFile);
 
-    bool EnsureOutputDirectoryExists = true;
-    app.add_option("-p,--parents", EnsureOutputDirectoryExists, "Automatically create parent directories for the output file if they do not exist");
+    bool EnsureOutputDirectoryExists = false;
+    app.add_flag("-p,--parents", EnsureOutputDirectoryExists, "Automatically create parent directories for the output file if they do not exist");
     std::string output_file;
     app.add_option("-o,--output", output_file, "Output file path")
     ->required();
