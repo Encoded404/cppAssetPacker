@@ -242,6 +242,12 @@ static_assert(std::is_trivially_copyable_v<float> && std::is_trivially_copyable_
         for (const auto& material : pack.materials)
         {
             const auto material_bytes = material.toByteData();
+            // write material size first as uint16_t
+            auto material_size_bytes = std::bit_cast<std::array<uint8_t, 2>>(static_cast<uint16_t>(material_bytes.size()));
+            if (!WriteBytes(stream, material_size_bytes, "material size"))
+            {
+                return false;
+            }
             if (!WriteBytes(stream, material_bytes, "material data"))
             {
                 return false;
@@ -417,4 +423,3 @@ int main(int argc, char** argv) {
         return 1;
     }
 }
-
